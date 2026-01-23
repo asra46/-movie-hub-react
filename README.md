@@ -1,6 +1,30 @@
-# Getting Started with Create React App
+# 🎬 Movie Hub (React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Movie Hub is a responsive movie browsing application built with React.  
+It uses the TMDB API to display popular, top-rated, and upcoming movies.
+
+## ✨ Features
+- Browse Popular, Top Rated & Upcoming movies  
+- Filter movies by rating (8+, 7+, 6+)  
+- Sort movies by release date or rating  
+- Dark / Light theme toggle  
+- Responsive layout (mobile + desktop)  
+- Movie cards with poster, rating, date & description  
+
+## 🛠 Tech Stack
+- React (Hooks & Context API)  
+- CSS (Mobile-first responsive design)  
+- TMDB REST API  
+- React Icons  
+
+## 🚀 Getting Started
+
+```bash
+git clone https://github.com/your-username/movie-hub-react.git
+cd movie-hub-react
+npm install
+npm start
+
 
 ## Available Scripts
 
