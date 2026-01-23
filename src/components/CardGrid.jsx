@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
 
-const API_KEY = "fd41bcbe59fed8424c78243dbda2596e";
+const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
 
 const CardGrid = ({ category, rating, sortBy }) => {
   const [movies, setMovies] = useState([]);
