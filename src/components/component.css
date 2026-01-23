@@ -1,0 +1,303 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* =====================
+   GLOBAL THEME
+===================== */
+
+/* Light Theme */
+.app.light {
+  background-color: #f9f9f9;
+  color: #111;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* Dark Theme */
+.app.dark {
+  background-color: #121212;
+  color: #f1f1f1;
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* =====================
+   HEADER / NAVBAR
+===================== */
+
+.header-container {
+  width: 100%;
+}
+
+/* Logo */
+.app.dark .logo {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: yellow;
+}
+.app.light .logo {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #000;
+}
+
+/* Navbar base */
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.3rem;
+  transition: background 0.3s ease;
+}
+
+/* Theme navbar */
+.app.dark .navbar {
+  background-color: hsl(0, 0%, 6%);
+}
+
+.app.light .navbar {
+  background-color: #fbf5f5;
+  color: #000;
+}
+
+/* Nav list */
+.navbar-items {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0.5rem 0.7rem;
+  list-style-type: none;
+}
+
+/* Nav item */
+.nav-item {
+  background: none;
+  outline: none;
+  border: none;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.app.dark .nav-item {
+  color: #fff;
+}
+
+.app.light .nav-item {
+  color: #111;
+}
+
+/* Hover */
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* =====================
+   CATEGORY SECTION
+===================== */
+
+.category-container {
+  width: 100%;
+  border-top: 0.1rem solid #979696;
+  padding: 0.8rem 1rem;
+  transition: background 0.3s ease;
+}
+
+.app.dark .category-container {
+  background-color: #000;
+  color: #fff;
+}
+
+.app.light .category-container {
+  background-color: #ffffff;
+  color: #111;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+  justify-content: center;
+}
+
+ .app.light .category h1 {
+  font-size: 1.2rem;
+  font-weight: 900;
+    color: #000;
+
+}
+
+
+ .app.dark .category h1 {
+  font-size: 1.2rem;
+  font-weight: 900;
+    color: yellow;
+
+}
+
+
+.rating {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.sort select {
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.app.dark .sort select {
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+.app.light .sort select {
+  background-color: #e5e5e5;
+  color: #111;
+}
+
+/* =====================
+   CARD GRID
+===================== */
+
+.card-grid {
+  padding: 5rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  transition: background 0.3s ease;
+}
+
+.app.dark .card-grid {
+  background-color: #000;
+}
+
+.app.light .card-grid {
+  background-color: #ffffff;
+}
+
+.card {
+  position: relative;
+  height: 60vh;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 13px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Image */
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.45)
+  );
+  z-index: 1;
+}
+
+/* Card body */
+.card-body {
+  position: absolute;
+  bottom: 0;
+  padding: 0 1rem;
+  z-index: 2;
+}
+
+.card-body h3 {
+  color: yellow;
+  font-size: 1.1rem;
+}
+
+.card-date-rate {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  color: yellow;
+}
+
+.rating-star {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: gold;
+  padding: 0.5rem 0;
+}
+
+.description {
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #fff;
+}
+
+
+/* =====================
+   DESKTOP
+===================== */
+
+@media (min-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+    overflow: hidden;
+  }
+
+  .navbar-items {
+    gap: 1.5rem;
+  }
+
+  .nav-item {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .category {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .rating {
+    flex-direction: row;
+    gap: 1.2rem;
+    align-items: center;
+  }
+
+  .card-grid {
+    padding: 2rem;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+  }
+
+  .card {
+    height: 52vh;
+  }
+
+  .card-body h3 {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+}
