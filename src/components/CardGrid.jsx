@@ -1,22 +1,28 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import MovieCard from "./MovieCard";
 
-const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
+const API_KEY = "fd41bcbe59fed8424c78243dbda2596e";
 
 const CardGrid = ({ category, rating, sortBy }) => {
   const [movies, setMovies] = useState([]);
 
+  // Wrap fetchMovies in useCallback so it stays stable
+  const fetchMovies = useCallback(async () => {
+    try {
+      const res = await fetch(
+        `https://api.themoviedb.org/3/movie/${category}?api_key=${API_KEY}`
+      );
+      const data = await res.json();
+      setMovies(data.results);
+    } catch (error) {
+      console.error("Failed to fetch movies:", error);
+    }
+  }, [category]); // category is a dependency
+
+  // Now it's safe to include fetchMovies in the dependency array
   useEffect(() => {
     fetchMovies();
-  }, [category]);
-
-  const fetchMovies = async () => {
-    const res = await fetch(
-      `https://api.themoviedb.org/3/movie/${category}?api_key=${API_KEY}`
-    );
-    const data = await res.json();
-    setMovies(data.results);
-  };
+  }, [fetchMovies]);
 
   let filtered = movies;
 
